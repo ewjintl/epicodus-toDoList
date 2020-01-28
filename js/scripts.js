@@ -4,12 +4,14 @@ $(document).ready(function() {
     var person1Input = $("input#userList").val();
     var person2Input = $("input#userList2").val();
     var person3Input = $("input#userList3").val();
- console.log(person1Input, person2Input, person3Input);
     agenda.addTask([person1Input, person2Input, person3Input]); 
-    console.log(agenda)   
+    newArray = []
+    newArray.push(agenda);
+    console.log(newArray);
+
   });
 });
-
+console.log(agenda)
 // BACK END
 
 
@@ -19,6 +21,7 @@ function agenda() {
 }
 
 agenda.prototype.addTask = function(task) {
+  // var results = []
   task.id = this.assignId();
   // this.item = person1Input;
   this.tasks.push(task);
@@ -72,3 +75,19 @@ function Task(item, due, location) {
 
 var agenda = new agenda();
 var task = new Task("Take out the garbage", "Tuesday", "Home");
+
+var displayList = function(results) {
+  $('ul#userResult').empty();
+  function displayList (agenda) {
+    var results = []
+    for (var i=0; i<=agenda.length; i++) {
+      return results;
+    };
+  }
+  console.log(results);
+  
+  
+  // $('ul#userResult').append("<li>" + item + "</li>");
+  // results.forEach(function(item) {
+  //   $('ul#userResult').append("<li>" + item + "</li>");
+};
